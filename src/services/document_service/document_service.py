@@ -39,6 +39,7 @@ from services.document_service.delete_documents import (
 from storage.data_source_class import DataSource
 from storage.internal.get_data_source_cached import get_data_source_cached
 from storage.repositories.zip.zip_file_client import ZipFileClient
+from common.utils.logging import logger
 
 pretty_printer = pprint.PrettyPrinter()
 

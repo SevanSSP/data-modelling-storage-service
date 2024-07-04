@@ -4,6 +4,9 @@ from cryptography.fernet import Fernet
 
 from config import config
 
+print(config)
+
+
 
 def scrypt(value: str, salt: str = config.SECRET_KEY) -> str:
     digest = hashlib.scrypt(value.encode(), salt=salt.encode(), n=16, r=8, p=1)  # OWASP recommended minimum
@@ -32,7 +35,10 @@ def decrypt(token: str) -> str:
     if not token:
         return ""
     _key_loaded()
+    print(config)
+
     fernet = Fernet(config.SECRET_KEY)
+
     token_as_bytes = token.encode()
     message_as_bytes = fernet.decrypt(token_as_bytes)
     return message_as_bytes.decode()

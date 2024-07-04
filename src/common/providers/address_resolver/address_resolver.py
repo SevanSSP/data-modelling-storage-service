@@ -21,7 +21,10 @@ def _resolve_path_items(
 ) -> tuple[list | dict, list[str], str]:
     if len(path_items) == 0 or isinstance(path_items[0], AttributeItem):
         raise NotFoundException(f"Invalid path_items {path_items}.")
+
     entity, id = path_items[0].get_entry_point(data_source, cache)
+
+
     path = [id]
     data_source_name = data_source.name
     for index, ref_item in enumerate(path_items[1:]):

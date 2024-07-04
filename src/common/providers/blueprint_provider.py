@@ -83,14 +83,20 @@ class BlueprintProvider:
         Only supports references on the "path" format.
         """
         if type in self.prefetched_blueprints:
+
             logger.debug(f"Cache hit! Returning pre-fetched blueprint '{type}'")
             return Blueprint(self.prefetched_blueprints[type], type)
         try:
             logger.debug(f"Cache miss! Fetching blueprint '{type}' '{hash(self)}'")
+
             address = Address.from_absolute(type)
+
             data_source = self.get_data_source_cached(address.data_source)
+
             path_elements = address.path.split("/")
             root_package = data_source.find({"name": path_elements[0], "type": SIMOS.PACKAGE.value, "isRoot": True})
+
+
             if not root_package:
                 raise NotFoundException(f"Could not find root package '{path_elements[0]}'")
             if len(root_package) > 1:

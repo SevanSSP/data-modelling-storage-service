@@ -29,7 +29,7 @@ class MongoDBClient(RepositoryInterface):
             password=decrypt(password),
             tls=tls,
             connectTimeoutMS=5000,
-            serverSelectionTimeoutMS=5000,
+            serverSelectionTimeoutMS=15000,
             retryWrites=False,
         )[database]
         self.blob_handler = gridfs.GridFS(self.handler)

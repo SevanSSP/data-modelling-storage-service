@@ -214,7 +214,6 @@ def add_document_use_case(
         address: Reference to a package, attribute inside an entity (either a list or a complex attribute) or a data source
         document_service: The document service
         files: Dict with names and files of the files contained in the document
-
     Returns:
         A dict that contains the ID of the added document.
     """

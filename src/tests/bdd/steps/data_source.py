@@ -67,7 +67,7 @@ def create_basic_repositories(context):
     for row in context.table:
         repos[row["name"]] = {
             "data_types": ["default"],
-            "host": "db",
+            "host": "localhost",
             "port": 27017,
             "username": "maf",
             "password": "maf",

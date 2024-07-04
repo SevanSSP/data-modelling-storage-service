@@ -24,7 +24,7 @@ def step_impl_2(context, uid: str, data_source_id: str):
 def step_impl(context):
     # Add system data source:
     document = {
-        "_id": "system",
+        "_id": "sysretem",
         "name": "system",
         "repositories": {
             "system": {

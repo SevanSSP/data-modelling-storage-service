@@ -74,6 +74,8 @@ class DataSourceRepository:
     def get(self, id: str) -> DataSource:
         try:
             data_source = data_source_db.get(id)
+
+
         except ServerSelectionTimeoutError as ex:
             logger.error("Failed to establish connection to internal database")
             raise ApplicationException(debug="Internal storage error") from ex

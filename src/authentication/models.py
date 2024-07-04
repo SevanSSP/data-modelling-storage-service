@@ -98,3 +98,4 @@ class PATData(BaseModel):
 
     def is_expired(self):
         return datetime.now() > self.expire
+

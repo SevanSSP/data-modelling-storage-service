@@ -116,7 +116,11 @@ class DataSource:
     def find(self, filter: dict) -> list[dict]:
         repo = self.get_default_repository()
 
+
+
         documents_with_access: list[dict] = []
+
+
         for entity in repo.find(filter):
             if lookup := self._lookup(entity.get("_id")):
                 try:
