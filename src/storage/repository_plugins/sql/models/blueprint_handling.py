@@ -4,7 +4,7 @@ from typing import List, Optional, TypeVar, Type
 from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, Table
 from sqlalchemy.ext.orderinglist import ordering_list
 from .base import Base
-import hashlib
+from storage.repository_plugins.sql.utils.hash import generate_hash
 
 """
 Provides the declarative base for all the custom models
@@ -51,14 +51,7 @@ class SQLBlueprint(BaseModel):
     @path.setter
     def path(self, value: str):
         self._path = value
-        self.hash = self.generate_hash(value)
-
-    def generate_hash(self, path: str, length: int = 8) -> str:
-        # Generate a SHA-256 hash and truncate it to the desired length
-        full_hash = hashlib.sha256(path.encode()).hexdigest()
-        return '_'+full_hash[:length]
-
-
+        self.hash = generate_hash(value)
     @classmethod
     def from_json(cls, file):
         relative_path = f'{file}.blueprint.json'

@@ -224,8 +224,6 @@ def add_document_use_case(
 
     if not address.path:
         return _add_document_to_data_source(address.data_source, document, document_service)
-    print(document)
-    print('------------------')
 
     return _add_document_to_entity_or_list(
         address=address,
