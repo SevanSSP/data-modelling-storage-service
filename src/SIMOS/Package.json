@@ -6,7 +6,7 @@
     "dmss://system/SIMOS/NamedEntity"
   ],
   "attributes": [
-     {
+    {
       "name": "type",
       "type": "dmss://system/SIMOS/BlueprintAttribute",
       "attributeType": "string"
