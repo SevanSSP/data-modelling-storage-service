@@ -105,7 +105,7 @@ class DataSource:
         uid = str(uid)
         lookup = self._lookup(uid)
         assert_user_has_access(lookup.acl, AccessLevel.READ, self.user)
-        #if cached_document := self.document_cache.get(f"{self.name}:{uid}"):
+        # if cached_document := self.document_cache.get(f"{self.name}:{uid}"):
         #    return cached_document
         repo = self.repositories[lookup.repository]
         document = repo.get(uid)

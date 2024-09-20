@@ -3,7 +3,7 @@
   "type": "dmss://system/SIMOS/Blueprint",
   "description": "",
   "extends": [
-     "dmss://system/SIMOS/NamedEntity"
+    "dmss://system/SIMOS/NamedEntity"
   ],
   "attributes": [
     {
@@ -26,7 +26,7 @@
       "type": "dmss://system/SIMOS/BlueprintAttribute",
       "attributeType": "number"
     },
-        {
+    {
       "name": "newAttribute",
       "type": "dmss://system/SIMOS/BlueprintAttribute",
       "attributeType": "number"
@@ -46,7 +46,6 @@
       "name": "signal",
       "type": "dmss://system/SIMOS/BlueprintAttribute",
       "attributeType": "dmss://system/models/containers/EquallySpacedSignal"
-
     }
   ]
 }

@@ -61,7 +61,6 @@ def _add_document_to_entity_or_list(
     files: dict[str, BinaryIO] | None,
     document_service: DocumentService,
 ) -> dict:
-
     """Add the document to an existing entity.
 
     Args:
@@ -72,7 +71,6 @@ def _add_document_to_entity_or_list(
     Returns:
        A dict that contains the ID of the added document.
     """
-
 
     try:
         target: Node = document_service.get_document(address)

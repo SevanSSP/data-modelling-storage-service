@@ -39,7 +39,6 @@ class Config(BaseSettings):
 
 
 config = Config()
-config.SECRET_KEY="sg9aeUM5i1JO4gNN8fQadokJa3_gXQMLBjSGGYcfscs="
 if not config.AUTH_ENABLED:
     print("################ WARNING ################")
     print("#       Authentication is disabled      #")
